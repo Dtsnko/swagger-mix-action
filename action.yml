@@ -1,0 +1,16 @@
+# action.yml
+name: 'swagger-mixin'
+description: 'Mix swagger files'
+inputs:
+  directory:
+    description: 'path to the generated swagger files'
+    required: true
+    default: 'swagger'
+outputs:
+  time: # id of output
+    description: 'The time we greeted you'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.directory }}
